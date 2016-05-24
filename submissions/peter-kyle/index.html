@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link href='https://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <!-- Code Fellows favicon -->
     <link rel="icon" type="image/x-icon" href="https://i.imgur.com/7v5ASc8.png">
 
@@ -39,14 +40,19 @@
     <script id="repo-template" type="text/x-handlebars-template">
       <li>
         <a href="{{html_url}}" target="_blank"><h3>{{name}}</h3></a>
-        <p>Description: {{description}}</p>
-        <p>Language: {{language}}</p>
-        <p>Created: {{created_at}}</p>
-        <p>Last updated: {{updated_at}}</p>
-        {{#if watchers_count}}
-          <p>{{watchers}} watching this repo</p>
-        {{/if}}
-      </li>
+        <ul>
+          <li><strong>Description:</strong> {{description}}</li>
+          <li><strong>Language:</strong> {{language}}</li>
+          <li><strong>Created:</strong> {{created_at}}</li>
+          <li><strong>Last updated:</strong> {{updated_at}}</li>
+          {{#if watchers_count}}
+          <li><strong>{{watchers}}</strong> people watching this repo</li>
+          {{/if}}
+          {{#if forks}}
+          <li><strong>{{forks_count}}</strong> forks of this repo</li>
+          {{/if}}
+          <li><strong>{{size}}</strong> lines of the finest, hand-crafted code</li>
+        </ul>
     </script>
   </head>
   <body>
