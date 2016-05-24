@@ -13,8 +13,10 @@
   /* NOTE: Remember that new Handlebars template? Let's compile it!
       Save the result in this `render` variable that we will pass to
       the append method below. */
-  var render /*TODO: finish this line */;
-
+  var render =  function(repo, repoTemplateId){
+    var template = Handlebars.compile($(repoTemplateId).text()); /*TODO: finish this line */
+    return template(repo);
+  };
   /* NOTE: If all the data is loaded, we can prep the UI and
       render the repos. */
   repoView.index = function() {
