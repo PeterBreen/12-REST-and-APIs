@@ -12,9 +12,9 @@
       headers: {'Authorization': 'token ' + githubkey},
       success: function(data,message,xhr){
         repos.all = data;
+        callback();
       },
     });
-    callback;
   };
 
   repos.with = function(attr) {
